@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>NAGENDRA RUN 5K</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Cloudflare Turnstile -->
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer>
+  </script>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1>NAGENDRA RUN 5K</h1>
+
+    <p class="subtitle">
+      Form Pendaftaran Peserta
+    </p>
+
+    <form id="registrationForm">
+
+      <label>
+        Nama Lengkap
+        <input
+          type="text"
+          name="nama_lengkap"
+          maxlength="100"
+          required>
+      </label>
+
+      <label>
+        Email
+        <input
+          type="email"
+          name="email"
+          maxlength="150"
+          required>
+      </label>
+
+      <label>
+        NIK / KTP
+        <input
+          type="text"
+          name="nik_ktp"
+          maxlength="30"
+          required>
+      </label>
+
+      <label>
+        Nomor Telepon
+        <input
+          type="tel"
+          name="no_telepon"
+          maxlength="20"
+          required>
+      </label>
+
+      <label>
+        Size Jersey
+        <select name="size_jersey" required>
+          <option value="">Pilih size</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+          <option value="XXXL">XXXL</option>
+        </select>
+      </label>
+
+      <label>
+        Nama BIB
+        <input
+          type="text"
+          name="nama_bib"
+          maxlength="30"
+          required>
+      </label>
+
+      <label>
+        Kategori
+        <select name="kategori" required>
+          <option value="">Pilih kategori</option>
+          <option value="MEDALI ONLY">
+            MEDALI ONLY
+          </option>
+          <option value="MEDALI + JERSEY">
+            MEDALI + JERSEY
+          </option>
+        </select>
+      </label>
+
+      <!-- TURNSTILE -->
+      <div
+        class="cf-turnstile"
+        data-sitekey="GANTI_SITE_KEY">
+      </div>
+
+      <button type="submit">
+        DAFTAR SEKARANG
+      </button>
+
+    </form>
+
+    <div id="status"></div>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
