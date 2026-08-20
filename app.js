@@ -133,14 +133,25 @@ form.addEventListener(
         await response.json();
 
       if (
-        !response.ok ||
-        !result.success
-      ) {
-        throw new Error(
-          result.message ||
-          "Pendaftaran gagal."
-        );
-      }
+  !response.ok ||
+  !result.success
+) {
+  let message =
+    result.message ||
+    "Pendaftaran gagal.";
+
+  if (
+    Array.isArray(result.error_codes) &&
+    result.error_codes.length > 0
+  ) {
+    message +=
+      " [" +
+      result.error_codes.join(", ") +
+      "]";
+  }
+
+  throw new Error(message);
+}
 
       setStatus(
         "Pendaftaran berhasil. ID Peserta: " +
